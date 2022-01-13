@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<title>exercise 1</title>
+<link href="ex1.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<script type="text/javascript">
+var relistuestURL = "https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json";
+var xmlhttp= new XMLHttpRequest();
+
+xmlhttp.open("GET",relistuestURL);
+xmlhttp.responseType = 'json';
+xmlhttp.send();
+
+xmlhttp.onload = function() {
+	//var newImage = xmlhttp.response;
+	//addImage(newImage);
+	//showImage(newImage);
+	getImage();
+}
+
+function addImage(jsonObj){
+	let newImage = document.createElement('div');
+	newImage = jsonObj['result']['results']['file'];
+	//div.appendChild(newImage);
+}
+
+var n = 0;
+
+function getImage(){ 
+	//console.log(xmlhttp);
+	//console.log(xmlhttp.response['result']['results']);
+	//console.log('where is file', xmlhttp.response['result']['results'][0]['file']);
+	//document.getElementById('body').appendChild(img);
+	//console.log(document.listuerySelector('.image-container'));
+	//var container = document.listuerySelector('.image-container');
+	let box = document.querySelector('.box');
+	
+	for (let i = 0 + n; i < (8 + n); i++){
+
+		let result = xmlhttp.response['result']['results'][i];
+		let file = result['file'];
+		let stitle = result['stitle'];
+		let url = file.slice(0, file.indexOf('http', 1));
+		//console.log(url);
+		
+		let bear = document.createElement('div');
+		bear.className = 'bear';
+		let container = document.createElement('div');
+		container.className = 'image-container';
+		let word = document.createElement('p');
+		word.className = 'word';
+		word.textContent = stitle;
+		let img = document.createElement('img'); 	
+		img.src = url; 
+
+		container.appendChild(img);
+		bear.appendChild(container);
+		bear.appendChild(word);
+		
+		box.appendChild(bear);
+
+	}
+
+	n += 8;
+}
+
+function toggle_menu(){
+	//document.getElementByClassName('menu');
+	let list = document.getElementsByTagName('ul');
+	if (list[0].hasAttribute('style'))
+		list[0].removeAttribute('style');
+	else
+		list[0].style = 'display:block;';
+}
+</script>
+
+<body>
+<header>
+My Bear
+<div class="menu">
+	<ul>
+		<li>Bear 1</li>
+		<li>Bear 2</li>
+		<li>Bear 3</li>
+		<li>Bear 4</li>
+	</ul>
+	<button class="first_button" onclick="toggle_menu()"><img src="icon.png" style="width:60%"></button>
+</div>
+
+</header>
+
+<div class="middle">
+	<p>I am a Bear</p>
+</div>
+
+<div class='box'></div>
+
+<div class="button_container">
+<button class="last_button" onclick="getImage()">Load More</button>
+</div>
+
+</body>
+</html>
