@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<link rel="stylesheet" href="{{ url_for('static', filename='fail.css')}}">
+
+<title></title>
+</head>
+<body>
+<header>失敗頁面 </header>
+
+<div id="warningSentence" style="font-weight:bold">asd</div>
+
+</body>
+<script type="text/javascript">
+    const params = new URLSearchParams(window.location.search);
+    let connectSentence = document.getElementById('warningSentence');
+    connectSentence.textContent = params.get('message');
+</script>
+</html>

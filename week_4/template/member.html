@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<link rel="stylesheet" href="{{ url_for('static', filename='member.css')}}">
+<title></title>
+</head>
+<body>
+<header>
+    歡迎光臨,這是會員頁 </header>
+<form action="/member" method="post">
+    <strong>恭喜您,成功登入系統^^</strong><br><br>
+</form>
+<form action="/signout">
+    <input type="submit" value="登出系統">
+</form>
+</body>
+</html>
