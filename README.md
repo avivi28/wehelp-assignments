@@ -3,7 +3,7 @@
 Request 3:
 -	使用 INSERT 指令新增一筆資料到 member 資料表中，這筆資料的 username 和password 欄位必須是 test。接著繼續新增至少 4 筆隨意的資料。
 -	使用 SELECT 指令取得所有在 member 資料表中的會員資料。
- ![alt text](https://github.com/avivi28/wehelp-assignments/hw1
+ ![alt text](https://github.com/avivi28/wehelp-assignments/hw.1
  
  
 
