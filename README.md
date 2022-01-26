@@ -42,9 +42,11 @@ Request 5
  
 
 -	使用 SELECT 搭配 JOIN 語法，取得所有留言，結果須包含留言者會員的姓名。 
+
 ![image text](https://github.com/avivi28/wehelp-assignments/raw/main/week_5/hw.16.png)
 
 -	使用 SELECT 搭配 JOIN 語法，取得 member 資料表中欄位 username 是 test 的所有留言，資料中須包含留言者會員的姓名。
+
 ![image text](https://github.com/avivi28/wehelp-assignments/raw/main/week_5/hw.17.png) 
 
 
