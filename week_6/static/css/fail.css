@@ -1,0 +1,27 @@
+header{
+    background-color:rgb(135, 190, 222);
+    height:150px;
+    width:auto;
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    font-size:50px;
+}
+div{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    margin:20px;
+    flex-direction: column;
+}
+form{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    margin:20px;
+    flex-direction: column;
+}
