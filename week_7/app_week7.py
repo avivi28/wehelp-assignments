@@ -45,7 +45,6 @@ def register():
 @app.route("/signin", methods=['GET', 'POST'])
 def signin():
     username = request.form['username']
-    session["username"]=username # record the username-> for security
     password = request.form['password']
     query= "SELECT * FROM member WHERE username = %s AND password = %s"
     input= (username, password,)
@@ -53,6 +52,7 @@ def signin():
     results= cursor.fetchone() #fetchall(get ALL) vs fetchone(get the 1st row)
     if results != None:
         results= results[1]
+        session["username"]=username # record the username-> for security
         return render_template('member.html', hello_name=results)
     elif not username or not password:
         return render_template('fail.html', message='請輸入帳號、密碼')
